@@ -41,6 +41,7 @@ function! NERDTreeQuit()
 endfunction
 autocmd WinEnter * call NERDTreeQuit()
 " }}}
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " airline: Advanced status line {{{
 Plugin 'bling/vim-airline'
 set statusline+=%#warningmsg#
@@ -102,7 +103,9 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ap/vim-css-color'
 Plugin 'miripiruni/CSScomb-for-Vim'
-Plugin 'mxv/vim-jsx'
+Plugin 'MaxMEllon/vim-jsx-pretty'
+au BufRead,BufNewFile *.tsx set filetype=javascript
+au BufRead,BufNewFile *.ts set filetype=javascript
 " syntastic: syntax highlight {{{
 Plugin 'vim-syntastic/syntastic'
 
