@@ -109,7 +109,7 @@ au BufRead,BufNewFile *.ts set filetype=javascript
 " syntastic: syntax highlight {{{
 Plugin 'vim-syntastic/syntastic'
 
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -123,8 +123,10 @@ Plugin 'chr4/nginx.vim'
 Plugin 'prettier/vim-prettier'
 
 Plugin 'Galooshi/vim-import-js'
+Plugin 'ternjs/tern_for_vim'
 " Color scheme {{{
-Plugin 'joshdick/onedark.vim'
+"Plugin 'joshdick/onedark.vim'
+Plugin 'drewtempelmeyer/palenight.vim'
 "}}}
 call vundle#end()            " required
 " }}}
@@ -135,7 +137,8 @@ call vundle#end()            " required
 
 set ttyfast
 set lazyredraw
-colorscheme onedark
+set background=dark
+colorscheme palenight
 set nocompatible
 filetype off
 set foldmethod=marker
