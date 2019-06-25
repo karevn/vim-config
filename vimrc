@@ -104,8 +104,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ap/vim-css-color'
 Plugin 'miripiruni/CSScomb-for-Vim'
 Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'flowtype/vim-flow'
 au BufRead,BufNewFile *.tsx set filetype=javascript
-au BufRead,BufNewFile *.ts set filetype=javascript
+" au BufRead,BufNewFile *.ts set filetype=javascript
+au BufRead,BufNewFile *.ts set filetype=typescript
 " syntastic: syntax highlight {{{
 Plugin 'vim-syntastic/syntastic'
 
@@ -124,6 +127,7 @@ Plugin 'prettier/vim-prettier'
 
 Plugin 'Galooshi/vim-import-js'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'Quramy/tsuquyomi'
 " Color scheme {{{
 "Plugin 'joshdick/onedark.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
@@ -218,3 +222,17 @@ vnoremap < <<CR>gv
 
 let g:CommandTWildIgnore=&wildignore . ",*/node_modules,*/.git,*/dist"
 
+" True colors
+
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+let g:palenight_terminal_italics=1
